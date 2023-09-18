@@ -17,4 +17,6 @@ class Task extends Model
         'updated_at',
     ];
 
+    protected $fillable= ['title','is_done'];
+
 }
