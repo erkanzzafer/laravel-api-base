@@ -24,6 +24,7 @@ class UpdateTaskRequest extends FormRequest
         return [
            'title' => 'sometimes|required|max:255',
            'is_done' => 'sometimes|boolean',
+           'user_id' => 'sometimes|integer'
         ];
     }
 }

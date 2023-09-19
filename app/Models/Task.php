@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Task extends Model
 {
@@ -13,10 +14,15 @@ class Task extends Model
         'is_done' => 'boolean',
     ];
 
-    protected $hidden = [
+   /* protected $hidden = [
         'updated_at',
-    ];
+    ];*/
 
-    protected $fillable= ['title','is_done'];
+    protected $fillable= ['title','is_done','user_id'];
+
+    public function create():BelongsTo
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
 
 }
